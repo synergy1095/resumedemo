@@ -1,73 +1,171 @@
-<!DOCTYPE>
-<html ng-app="myApp">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Resume</title>
-<style>
-h1 {text-align:center;}
-p {text-align:center;}
-</style>
+    <title>Résumé: Jonathan Song</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
-  <div class="container" ng-controller="AppCtrl">
-    <h1>Jonathan Song</h1>
-    <p>
-      address<br>city, state, zip<br>Phone: (111) 111-1111 | Email: email@email.com<br>
-      <a href="https://github.com/synergy1095">My Github</a><br>
-      Insert some descriptive text here blah blah blah blah blah blah <br>blah blah blah blah blah blah <br>blah blah blah blah blah blah <br>
-    </p>
-    <h3>Education</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>School</th>         
-          <th>Degree</th>
-          <th>Last Year</th>
-          <th>&nbsp;</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="edu in education">
-          <td>{{edu.school}}</td>
-          <td>{{edu.degree}}</td>
-          <td>{{edu.last_year}}</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>Skills</h3>
-    <table class="table">
-      <thead>
-      </thead>
-      <tbody>
-        <tr ng-repeat="skill in skills">
-          <td>{{skill.skill}}</td>
-        </tr>
-      </tbody>
-    </table>
-    <h3>Projects</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Title</th>         
-          <th>Description</th>
-          <th>&nbsp;</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="project in projects">
-          <td>{{project.title}}</td>
-          <td>{{project.description}}</td>
-        </tr>
-      </tbody>
-    </table>
 
-  </div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-<script src="controllers/controller.js"></script>
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Résumé Start</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#education">Education</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#skills">Skills</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#projects">Projects</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <h1>Jonathan Song</h1>
+                  <p>
+                    address<br>city, state, zip<br>Phone: (111) 111-1111 | Email: email@email.com<br>
+                    <a href="https://github.com/synergy1095">My Github</a><br>
+                    Insert some descriptive text here blah blah blah blah blah blah <br>blah blah blah blah blah blah <br>blah blah blah blah blah blah <br>
+                  </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <h3>Education</h3>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>School</th>         
+                        <th>Degree</th>
+                        <th>Last Year</th>
+                        <th>&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="edu in education">
+                        <td>{{edu.school}}</td>
+                        <td>{{edu.degree}}</td>
+                        <td>{{edu.last_year}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <h3>Skills</h3>
+                  <table class="table">
+                    <thead>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="skill in skills">
+                        <td>{{skill.skill}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                  <h3>Projects</h3>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Title</th>         
+                        <th>Description</th>
+                        <th>&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="project in projects">
+                        <td>{{project.title}}</td>
+                        <td>{{project.description}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
 </body>
+
 </html>
