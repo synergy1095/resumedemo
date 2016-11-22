@@ -1,0 +1,72 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <title>Resume</title>
+<style>
+h1 {text-align:center;}
+p {text-align:center;}
+</style>
+</head>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <h1>Jonathan Song</h1>
+    <p>
+      address<br>city, state, zip<br>Phone: (111) 111-1111 | Email: email@email.com<br>
+      Insert some descriptive text here blah blah blah blah blah blah <br>blah blah blah blah blah blah <br>blah blah blah blah blah blah <br>
+    </p>
+    <h3>Education</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>School</th>         
+          <th>Degree</th>
+          <th>Last Year</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="edu in education">
+          <td>{{edu.school}}</td>
+          <td>{{edu.degree}}</td>
+          <td>{{edu.last_year}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Skills</h3>
+    <table class="table">
+      <thead>
+      </thead>
+      <tbody>
+        <tr ng-repeat="skill in skills">
+          <td>{{skill.skill}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Projects</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Title</th>         
+          <th>Description</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="project in projects">
+          <td>{{project.title}}</td>
+          <td>{{project.description}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
